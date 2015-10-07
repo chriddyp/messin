@@ -1,10 +1,13 @@
 import pandas.io.data as web
 
 from dash.react import Dash
-from dash.components import div, h2, PlotlyGraph, Dropdown, label
+from dash.components import (div, h2, label,
+    PlotlyGraph, Dropdown)
 
 from datetime import datetime as dt
-df = web.DataReader("aapl", 'yahoo', dt(2007, 10, 1), dt(2009, 4, 1))
+df = web.DataReader(
+    "aapl", 'yahoo',
+    dt(2007, 10, 1), dt(2009, 4, 1))
 
 dash = Dash(__name__)
 
